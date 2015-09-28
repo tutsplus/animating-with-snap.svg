@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snap.svg</title>
+        <script src="snap/snap.svg-min.js"></script>
+        <style>
+            #clock {
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="clock"></div>
+       
+       
+        <script>
+            var clock = Snap("#clock");
+            
+            Snap.load("clock.svg", function(data) {
+                clock.append(data);
+                
+                var secondHand = clock.select("#second_hand");
+                var minuteHand = clock.select("#minute_hand");
+                var hourHand = clock.select("#hour_hand");
+                
+                secondHand.transform('r45,150,150');
+                minuteHand.transform('r205,150,150');
+                hourHand.transform('r180,150,150');
+            });
+        </script>
+    </body>
+</html>

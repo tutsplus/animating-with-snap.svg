@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snap.svg</title>
+        <script src="snap/snap.svg-min.js"></script>
+    </head>
+    <body>
+        <script>
+            var s = Snap(400, 400);
+            var circle = s.circle(200, 200, 150);
+            
+            circle.attr({
+                fill: "#0000ff",
+                stroke: "#000",
+                strokeWidth: 4
+            });
+            //var rect = s.rect(200, 0, 200, 200);
+            //var ellipse = s.ellipse(200,200,100,200);
+            //var roundRect = s.rect(0,0,400,400,20);
+            //var line = s.line(0,0,400,400);
+/*            line.attr({
+               stroke: "#F00" 
+            });*/
+            //var polygon = s.polyline(0,0,50,50,100,0,150,50,150,150,100,100,50,150,0,100);
+        </script>
+    </body>
+</html>

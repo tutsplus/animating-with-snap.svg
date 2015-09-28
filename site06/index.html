@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snap.svg</title>
+        <script src="snap/snap.svg-min.js"></script>
+    </head>
+    <body>
+        <script>
+            var s = Snap(400, 400);
+            
+            var base = s.rect(50, 100, 100, 75);
+            var roof = s.polygon(35,100,165,100,100,50);
+            var house = s.g(base, roof);
+
+            house.attr({
+               fill: "red"
+            });
+            
+            var chimney = s.rect(65,50,15,30);
+            house.add(chimney);
+            
+            house.transform("t100,0r45s.5");
+        </script>
+    </body>
+</html>

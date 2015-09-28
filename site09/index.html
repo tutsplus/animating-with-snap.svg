@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snap.svg</title>
+        <script src="snap/snap.svg-min.js"></script>
+    </head>
+    <body>
+        <script>
+            var s = Snap(400, 400);
+            
+            var base = s.rect(50, 100, 100, 75);
+            var roof = s.polygon(35,100,165,100,100,50);
+            var house = s.g(base, roof);
+
+            house.attr({
+               fill: "red"
+            });
+            
+            var chimney = s.rect(65,50,15,30);
+            house.add(chimney);
+            
+            //house.animate({transform: "s2,0,0r45,100,100t100,0"}, 1000);
+            base.animate({height: 300}, 1000, mina.elastic, function() {
+                house.animate({transform: 't200,0'}, 1000, mina.easeinout, function() {
+                    base.animate({height: 75}, 1000, mina.elastic);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snap.svg</title>
+        <script src="snap/snap.svg-min.js"></script>
+        <style>
+            #icon-house {
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="icon-house"></div>
+       
+       
+        <script>
+            var icon = Snap("#icon-house");
+            
+            Snap.load("icon-house.svg", function(data) {
+                icon.append(data);
+                
+                var house = icon.select("#house");
+                house.attr({fill: "white"});
+                
+                var bg = icon.select("#bg");
+                bg.attr({fill: "#2F62AD"});
+                
+                var ring = icon.select("#ring");
+                ring.attr({fill: "#2F62AD"});
+            });
+        </script>
+    </body>
+</html>
